@@ -22,9 +22,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showPopUpMenu(){
-        val popMenu = PopupMenu(this,btn).apply{
-            menuInflater.inflate(R.menu.popup_menu,menu)
-        }
+        // Version 1
+//        val popMenu = PopupMenu(this,btn).apply{
+//            menuInflater.inflate(R.menu.popup_menu,menu)
+//            setOnMenuItemClickListener {
+//                when(it.itemId){
+//                    R.id.blue -> {
+//                        root.setBackgroundColor(Color.BLUE)
+//                        true
+//                    }
+//                    R.id.red -> {
+//                        root.setBackgroundColor(Color.RED)
+//                        true
+//                    }
+//                    R.id.green -> {
+//                        root.setBackgroundColor(Color.GREEN)
+//                        true
+//                    } else -> true
+//                }
+//            }
+//        }
+        val popMenu = PopupMenu(this,btn)
+        menuInflater.inflate(R.menu.popup_menu,popMenu.menu)
         popMenu.setOnMenuItemClickListener {
             when(it.itemId){
                 R.id.blue -> {
