@@ -3,6 +3,7 @@ package com.example.popupmenu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.PopupMenu
 import androidx.constraintlayout.widget.ConstraintLayout
 
 class MainActivity : AppCompatActivity() {
@@ -16,5 +17,15 @@ class MainActivity : AppCompatActivity() {
         btn.setOnClickListener {
             showPopUpMenu()
         }
+
     }
+
+    fun showPopUpMenu(){
+        val popMenu = PopupMenu(this,btn).apply{
+            menuInflater.inflate(R.menu.popup_menu,menu)
+        }
+        popMenu.show()
+    }
+
+
 }
