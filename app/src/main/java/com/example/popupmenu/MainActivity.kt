@@ -1,5 +1,6 @@
 package com.example.popupmenu
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,6 +24,22 @@ class MainActivity : AppCompatActivity() {
     fun showPopUpMenu(){
         val popMenu = PopupMenu(this,btn).apply{
             menuInflater.inflate(R.menu.popup_menu,menu)
+        }
+        popMenu.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.blue -> {
+                    root.setBackgroundColor(Color.BLUE)
+                    true
+                }
+                R.id.red -> {
+                    root.setBackgroundColor(Color.RED)
+                    true
+                }
+                R.id.green -> {
+                    root.setBackgroundColor(Color.GREEN)
+                    true
+                } else -> true
+            }
         }
         popMenu.show()
     }
